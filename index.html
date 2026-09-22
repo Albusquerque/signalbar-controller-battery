@@ -1431,7 +1431,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         gauge:{title:&#x27;Controller 2&#x27;,status:&#x27;Battery gauge&#x27;,variants:[[&#x27;Quiet fill&#x27;,&#x27;A still gauge. Motion is reserved for a meaningful change.&#x27;],[&#x27;Bright tip&#x27;,&#x27;A white tip marks the exact end of the battery fill.&#x27;],[&#x27;Soft horizon&#x27;,&#x27;A broad lower-intensity glow, with a precise end marker.&#x27;]]},
         low:{title:&#x27;Controller 2&#x27;,status:&#x27;Low battery&#x27;,variants:[[&#x27;Last ember&#x27;,&#x27;The bar collapses to the remaining charge, then two warm warning beats.&#x27;],[&#x27;Signal flare&#x27;,&#x27;A red warning ripples from the remaining charge to the far edge and back.&#x27;],[&#x27;Afterglow&#x27;,&#x27;A vivid double pulse resolves into a dim, steady red remainder.&#x27;]]},
         charging:{title:&#x27;Controller 2&#x27;,status:&#x27;Charging · continuous&#x27;,variants:[[&#x27;Photon current&#x27;,&#x27;A white particle crosses only the charged area and gently melts into its bright tip.&#x27;],[&#x27;Tidal fill&#x27;,&#x27;A broad wave of light rolls through the filled area, rests, then begins again.&#x27;],[&#x27;Spark lattice&#x27;,&#x27;Small highlights follow each other through the charge and gather at the tip.&#x27;]]},
-        duo:{title:&#x27;P1 96% · P2&#x27;,status:&#x27;Two controllers&#x27;,variants:[[&#x27;Twin reveal&#x27;,&#x27;Both gauges grow from the outer edges. A white tip marks each charge; the centre LED stays dark.&#x27;],[&#x27;Two signatures&#x27;,&#x27;A highlight travels from each outer edge towards its own white gauge tip: left, then right.&#x27;],[&#x27;Mirror greeting&#x27;,&#x27;Two matching streams approach the centre, pause, then return to their white gauge tips.&#x27;]]}
+        duo:{title:&#x27;P1 96% · P2&#x27;,status:&#x27;Two controllers&#x27;,variants:[[&#x27;Twin reveal&#x27;,&#x27;Both gauges grow from the outer edges; the two white tips appear only once the reveal is complete.&#x27;],[&#x27;Two signatures&#x27;,&#x27;A coloured highlight introduces each gauge, left then right; both white tips appear at the end.&#x27;],[&#x27;Mirror greeting&#x27;,&#x27;Two coloured streams approach the dark centre and withdraw; the white tips mark the final levels.&#x27;]]}
       };
       const leds=Array.from({length:17},()=&gt;{const e=document.createElement(&#x27;i&#x27;);q(&#x27;.sb-logic&#x27;).appendChild(e);return e});
       let epoch=performance.now(),chargeStart=0,chargeFrom=41,finishAt=-999;
@@ -1442,13 +1442,13 @@ html&gt;body{padding:0}&lt;/style&gt;
       function fill(a,x,y,c){for(let i=Math.max(0,x);i&lt;=Math.min(16,y);i++)put(a,i,c)}
       function restoredFrame(){const a=blank();fill(a,0,4,&#x27;#5a8fa2&#x27;);fill(a,5,8,&#x27;#6c8da9&#x27;);fill(a,9,11,&#x27;#8e8fb2&#x27;);return a}
       function gauge(a,percent,color=MINT,tip=false){const n=Math.max(percent&gt;0?1:0,Math.round(percent/100*17));fill(a,0,n-1,color);if(tip&amp;&amp;n)put(a,n-1,WHITE)}
-      function duoBase(t,animated){
+      function duoBase(t,animated,showTips=false){
         const a=blank(),left=Math.round(.96*8),right=Math.max(state.battery&gt;0?1:0,Math.round(state.battery/100*8));
         const progress=animated?ease(t/1.45):1;
         const nl=Math.round(left*progress),nr=Math.round(right*progress);
         fill(a,0,nl-1,MINT);fill(a,17-nr,16,AMBER);
-        if(nl)put(a,nl-1,WHITE);
-        if(nr)put(a,17-nr,WHITE);
+        if(showTips&amp;&amp;nl)put(a,nl-1,WHITE);
+        if(showTips&amp;&amp;nr)put(a,17-nr,WHITE);
         put(a,8,OFF);
         return a;
       }
@@ -1467,12 +1467,12 @@ html&gt;body{padding:0}&lt;/style&gt;
         }
         if(s===&#x27;duo&#x27;){
           const phase=t%5.6;
-          if(v===0)return duoBase(phase,true);
-          if(v===1){const out=duoBase(0,false),leftMax=7,rightCount=Math.max(state.battery&gt;0?1:0,Math.round(state.battery/100*8));
-            if(phase&lt;1.7){put(out,Math.min(leftMax,Math.floor(ease(phase/1.7)*(leftMax+1))),WHITE)}
-            else if(phase&lt;3.3&amp;&amp;rightCount){put(out,16-Math.min(rightCount-1,Math.floor(ease((phase-1.7)/1.6)*rightCount)),WHITE)}return out}
-          const out=duoBase(0,false),inner=7;
-          if(phase&lt;3.4){const step=phase&lt;1.45?Math.round(ease(phase/1.45)*inner):phase&lt;1.9?inner:Math.round((1-ease((phase-1.9)/1.45))*inner);put(out,step,WHITE);put(out,16-step,WHITE)}return out;
+          if(v===0)return duoBase(phase,true,phase&gt;=1.45);
+          if(v===1){const out=duoBase(0,false,phase&gt;=3.3),leftMax=7,rightCount=Math.max(state.battery&gt;0?1:0,Math.round(state.battery/100*8));
+            if(phase&lt;1.7){put(out,Math.min(leftMax,Math.floor(ease(phase/1.7)*(leftMax+1))),&#x27;#bbf4e2&#x27;)}
+            else if(phase&lt;3.3&amp;&amp;rightCount){put(out,16-Math.min(rightCount-1,Math.floor(ease((phase-1.7)/1.6)*rightCount)),&#x27;#ffe5ad&#x27;)}return out}
+          const out=duoBase(0,false,phase&gt;=3.4),inner=7;
+          if(phase&lt;3.4){const step=phase&lt;1.45?Math.round(ease(phase/1.45)*inner):phase&lt;1.9?inner:Math.round((1-ease((phase-1.9)/1.45))*inner);put(out,step,&#x27;#bbf4e2&#x27;);put(out,16-step,&#x27;#ffe5ad&#x27;)}return out;
         }
         if(s===&#x27;connect&#x27;){
           const phase=t%6.0;
@@ -1497,7 +1497,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         q(&#x27;.sb-hud-left&#x27;).textContent=s===&#x27;duo&#x27;?&#x27;Two controllers&#x27;:&#x27;Controller 2&#x27;;
         q(&#x27;.sb-hud-right&#x27;).textContent=s===&#x27;duo&#x27;?`96% · ${state.battery}%`:`${state.battery}%${s===&#x27;charging&#x27;&amp;&amp;state.battery&lt;100?&#x27; · charging&#x27;:&#x27;&#x27;}`;
         q(&#x27;.sb-hud-right&#x27;).style.color=s===&#x27;low&#x27;?RED:s===&#x27;charging&#x27;?CYAN:s===&#x27;duo&#x27;?AMBER:MINT;
-        q(&#x27;.sb-caption&#x27;).textContent=s===&#x27;charging&#x27;?(state.battery&gt;=100?&#x27;At 100%, the moving highlight ends and the previous signal returns.&#x27;:&#x27;The fill means battery level. The moving light means charging is in progress.&#x27;):s===&#x27;duo&#x27;?&#x27;8 LEDs per controller, mirrored fill, two white charge tips, centre LED off.&#x27;:s===&#x27;gauge&#x27;?&#x27;A stable level; no perpetual flourish when nothing changes.&#x27;:&#x27;Demo repeats here. The actual alert would play once, then restore the prior signal.&#x27;;
+        q(&#x27;.sb-caption&#x27;).textContent=s===&#x27;charging&#x27;?(state.battery&gt;=100?&#x27;At 100%, the moving highlight ends and the previous signal returns.&#x27;:&#x27;The fill means battery level. The moving light means charging is in progress.&#x27;):s===&#x27;duo&#x27;?&#x27;8 LEDs per controller, mirrored fill. White tips appear after the animation; centre LED off.&#x27;:s===&#x27;gauge&#x27;?&#x27;A stable level; no perpetual flourish when nothing changes.&#x27;:&#x27;Demo repeats here. The actual alert would play once, then restore the prior signal.&#x27;;
         const ruler=q(&#x27;.sb-ruler&#x27;).children;
         ruler[0].textContent=s===&#x27;duo&#x27;?&#x27;P1 · EDGE →&#x27;:&#x27;LEFT&#x27;;
         ruler[1].textContent=s===&#x27;duo&#x27;?&#x27;CENTRE OFF&#x27;:&#x27;LED 9 · CENTRE&#x27;;
