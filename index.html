@@ -5,20 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>SignalBar | Controller battery concept</title>
-<meta name="description" content="Explore five interactive LED animations for controller battery status on SignalBar.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d1219'/%3E%3Crect x='8' y='25' width='48' height='14' rx='6' fill='%2343d7e5'/%3E%3Ccircle cx='16' cy='32' r='3' fill='%230d1219'/%3E%3Ccircle cx='48' cy='32' r='3' fill='%230d1219'/%3E%3C/svg%3E">
-<style>:root{color-scheme:dark;background:#0d1219}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+<title>SignalBar | Controller battery concepts</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="Signalbar Controller Battery" data-srcdoc="&lt;!doctype html&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="SignalBar | Controller battery concepts" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;Signalbar Controller Battery&lt;/title&gt;
+&lt;title&gt;SignalBar | Controller battery concepts&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -1328,371 +1326,214 @@ html&gt;body{padding:0}&lt;/style&gt;
   syncTheme();
 })();
 &lt;/script&gt;
-&lt;div id=&quot;sb-controller-concept&quot;&gt;
+&lt;div id=&quot;sb-motion-lab&quot;&gt;
   &lt;style&gt;
-    #sb-controller-concept {
-      --sb-bg: #0d1219;
-      --sb-panel: #18212c;
-      --sb-panel-hi: #23303e;
-      --sb-line: #33404e;
-      --sb-text: #eef4f8;
-      --sb-muted: #aab9c7;
-      --sb-cyan: #43d7e5;
-      --sb-green: #7ce0ae;
-      --sb-amber: #ffc66e;
-      --sb-red: #ff6571;
-      width: 100%;
-      max-width: 920px;
-      margin: 0 auto;
-      color: var(--sb-text);
-      font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
-    }
-    #sb-controller-concept *, #sb-controller-concept *::before, #sb-controller-concept *::after { box-sizing: border-box; }
-    #sb-controller-concept .sbcc-shell {
-      overflow: hidden;
-      border: 1px solid #394653;
-      border-radius: 18px;
-      background: var(--sb-bg);
-      box-shadow: 0 20px 55px #0004;
-    }
-    #sb-controller-concept .sbcc-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
-      padding: 17px 20px;
-      border-bottom: 1px solid var(--sb-line);
-      background: #161f29;
-    }
-    #sb-controller-concept .sbcc-brand { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; }
-    #sb-controller-concept .sbcc-brand strong { font-size: 18px; font-weight: 500; letter-spacing: .035em; }
-    #sb-controller-concept .sbcc-brand span, #sb-controller-concept .sbcc-edition { color: var(--sb-muted); font-size: 12px; letter-spacing: .09em; text-transform: uppercase; }
-    #sb-controller-concept .sbcc-scenes { display: flex; flex-wrap: wrap; gap: 7px; padding: 12px 16px; border-bottom: 1px solid var(--sb-line); background: #121a23; }
-    #sb-controller-concept .sbcc-scene {
-      min-height: 38px;
-      padding: 7px 12px;
-      color: #c9d7e2;
-      background: #1f2a36;
-      border: 1px solid #3a4857;
-      border-radius: 7px;
-      font: inherit;
-      font-size: 13px;
-    }
-    #sb-controller-concept .sbcc-scene[aria-pressed=&quot;true&quot;] { color: #122026; background: #a1e5e8; border-color: #a1e5e8; font-weight: 500; }
-    #sb-controller-concept .sbcc-layout { display: grid; grid-template-columns: minmax(0, 1.38fr) minmax(250px, .82fr); }
-    #sb-controller-concept .sbcc-visual { min-width: 0; border-right: 1px solid var(--sb-line); background: #141b24; }
-    #sb-controller-concept .sbcc-stage {
-      height: 390px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      background: radial-gradient(circle at 52% 22%, #b8ada4, #968b84 62%, #776f69);
-    }
-    #sb-controller-concept .sbcc-stage::before { content: &quot;&quot;; position: absolute; z-index: 0; top: 57%; left: 0; right: 0; height: 8px; background: #7d5c4b; opacity: .66; }
-    #sb-controller-concept .sbcc-stage::after {
-      content: &quot;&quot;;
-      position: absolute;
-      z-index: 0;
-      left: -3%; right: -3%; bottom: 0;
-      height: 87px;
-      background: linear-gradient(174deg, #c09b6f 0%, #e3c49b 36%, #bd9569 75%, #926e4d 100%);
-      box-shadow: inset 0 6px 5px #ffe4bd8a;
-    }
-    #sb-controller-concept .sbcc-hud {
-      position: absolute;
-      z-index: 6;
-      top: 16px;
-      left: 16px;
-      right: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 9px;
-      color: #f0f5f6;
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .025em;
-    }
-    #sb-controller-concept .sbcc-hud-main, #sb-controller-concept .sbcc-hud-value {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      min-height: 30px;
-      padding: 5px 9px;
-      border-radius: 5px;
-      background: #14191edb;
-      box-shadow: 0 4px 14px #0003;
-    }
-    #sb-controller-concept .sbcc-hud-value { font-variant-numeric: tabular-nums; color: #9debd3; }
-    #sb-controller-concept .sbcc-machine {
-      width: min(76%, 330px);
-      position: relative;
-      z-index: 3;
-      margin-bottom: 64px;
-      filter: drop-shadow(11px 16px 14px #261e1abb);
-    }
-    #sb-controller-concept .sbcc-upper {
-      width: 100%;
-      height: 252px;
-      border-radius: 3px 4px 0 0;
-      background: linear-gradient(102deg, #272b2e 0%, #1a1d1f 38%, #212426 76%, #181b1d 100%);
-      box-shadow: inset 1px 0 1px #8a8e8b4a, inset -2px 0 3px #0a0c0d, inset 0 1px 1px #777d7c51;
-    }
-    #sb-controller-concept .sbcc-seam {
-      height: 12px;
-      position: relative;
-      margin: 0 5px;
-      isolation: isolate;
-      background: #0a0e0f;
-    }
-    #sb-controller-concept .sbcc-light, #sb-controller-concept .sbcc-bloom {
-      position: absolute;
-      left: 1%; right: 1%;
-      top: 2px;
-      height: 7px;
-      pointer-events: none;
-      background: #0a0e0f;
-      transition: background .17s ease;
-    }
-    #sb-controller-concept .sbcc-light { z-index: 2; filter: blur(1.1px); opacity: .98; }
-    #sb-controller-concept .sbcc-bloom { z-index: 1; top: -10px; height: 32px; filter: blur(11px); opacity: .78; }
-    #sb-controller-concept .sbcc-fascia {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 10.5%;
-      height: 55px;
-      padding: 0 6%;
-      background: linear-gradient(113deg, #24282a, #1b1e20 68%, #282b2c);
-      box-shadow: inset 0 2px 3px #62676639;
-    }
-    #sb-controller-concept .sbcc-usb { width: 15%; height: 12px; border-radius: 1px; background: #060808; box-shadow: inset 0 2px 2px #000, 0 1px 1px #b9b9b333; }
-    #sb-controller-concept .sbcc-usb::after { content: &quot;&quot;; display: block; width: 73%; height: 3px; margin: 5px auto 0; background: #555b59; }
-    #sb-controller-concept .sbcc-slot { width: 11%; height: 3px; margin-left: 1%; background: #090c0d; }
-    #sb-controller-concept .sbcc-dot { width: 5px; height: 5px; margin-left: auto; flex: 0 0 auto; border-radius: 50%; background: #f1f3fb; box-shadow: 0 0 6px #dae3ff; }
-    #sb-controller-concept .sbcc-power { width: 27px; height: 27px; flex: 0 0 auto; border-radius: 50%; background: #282c2c; box-shadow: 0 0 0 1px #080a0b, inset 1px 1px 2px #a4acaa45; }
-    #sb-controller-concept .sbcc-stage-foot { position: absolute; z-index: 4; left: 16px; bottom: 10px; color: #42362d; font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; }
-    #sb-controller-concept .sbcc-decky { padding: 16px 18px 17px; background: #171f29; }
-    #sb-controller-concept .sbcc-readout { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 10px; color: #ecf5f7; font-size: 14px; font-weight: 500; }
-    #sb-controller-concept .sbcc-readout span:last-child { color: var(--sb-muted); font-size: 12px; font-weight: 400; }
-    #sb-controller-concept .sbcc-logic { display: grid; grid-template-columns: repeat(17, minmax(0, 1fr)); gap: 3px; }
-    #sb-controller-concept .sbcc-logic i { display: block; height: 22px; border-radius: 2px; background: #303943; transition: background .17s ease; }
-    #sb-controller-concept .sbcc-description { min-height: 17px; margin: 10px 0 0; color: var(--sb-muted); font-size: 12px; line-height: 1.35; }
-    #sb-controller-concept .sbcc-settings { padding: 20px 19px 16px; background: #1b2632; }
-    #sb-controller-concept .sbcc-settings-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding-bottom: 15px; border-bottom: 1px solid #40505f; }
-    #sb-controller-concept .sbcc-settings-top strong { font-size: 16px; font-weight: 500; }
-    #sb-controller-concept .sbcc-settings-top span { padding: 3px 7px; border-radius: 4px; color: #a9e8de; background: #235c59; font-size: 11px; }
-    #sb-controller-concept .sbcc-label { margin: 17px 0 8px; color: #bfd0df; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
-    #sb-controller-concept .sbcc-mode-title { margin: 0 0 8px; font-size: 20px; font-weight: 500; line-height: 1.15; }
-    #sb-controller-concept .sbcc-mode-detail { min-height: 58px; margin: 0; color: #bdcbd7; font-size: 13px; line-height: 1.42; }
-    #sb-controller-concept .sbcc-rule { display: flex; justify-content: space-between; align-items: center; gap: 9px; min-height: 43px; border-top: 1px solid #394957; color: #dee9f1; font-size: 13px; }
-    #sb-controller-concept .sbcc-rule b { color: #b9d3dc; font-size: 12px; font-weight: 500; text-align: right; }
-    #sb-controller-concept .sbcc-select { max-width: 140px; padding: 5px 7px; color: #edf5fa; background: #2a3b4c; border: 1px solid #526576; border-radius: 4px; font: inherit; font-size: 12px; }
-    #sb-controller-concept .sbcc-note { margin: 15px 0 0; padding-top: 11px; border-top: 1px solid #394957; color: #a8bbc8; font-size: 11px; line-height: 1.45; }
-    @media (max-width: 680px) {
-      #sb-controller-concept .sbcc-layout { grid-template-columns: 1fr; }
-      #sb-controller-concept .sbcc-visual { border-right: 0; border-bottom: 1px solid var(--sb-line); }
-      #sb-controller-concept .sbcc-stage { height: 365px; }
-      #sb-controller-concept .sbcc-machine { margin-bottom: 59px; }
-      #sb-controller-concept .sbcc-settings { padding-bottom: 20px; }
-      #sb-controller-concept .sbcc-mode-detail { min-height: 0; padding-bottom: 13px; }
-    }
-    @media (max-width: 390px) {
-      #sb-controller-concept .sbcc-stage { height: 327px; }
-      #sb-controller-concept .sbcc-machine { width: min(78%, 280px); margin-bottom: 56px; }
-      #sb-controller-concept .sbcc-upper { height: 215px; }
-      #sb-controller-concept .sbcc-fascia { height: 48px; }
-      #sb-controller-concept .sbcc-scenes { gap: 5px; }
-      #sb-controller-concept .sbcc-scene { padding: 6px 8px; font-size: 12px; }
-      #sb-controller-concept .sbcc-hud { top: 10px; left: 9px; right: 9px; font-size: 11px; }
-      #sb-controller-concept .sbcc-hud-main, #sb-controller-concept .sbcc-hud-value { padding: 4px 6px; }
-      #sb-controller-concept .sbcc-logic { gap: 2px; }
-    }
+    #sb-motion-lab{--sb-bg:#0d141d;--sb-panel:#17232e;--sb-panel-2:#1d2c38;--sb-line:#364b59;--sb-text:#edf5f6;--sb-muted:#aec3cb;--sb-cyan:#57d9e9;--sb-mint:#78dabb;--sb-amber:#ffd17b;--sb-red:#fb6971;--sb-white:#f6f5ef;--sb-off:#080c10;color:var(--sb-text);font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,sans-serif;max-width:1024px;margin:auto}
+    #sb-motion-lab *,#sb-motion-lab *::before,#sb-motion-lab *::after{box-sizing:border-box}
+    #sb-motion-lab .sb-shell{overflow:hidden;border:1px solid #40515d;border-radius:17px;background:var(--sb-bg);box-shadow:0 20px 66px #0007}
+    #sb-motion-lab .sb-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--sb-line);background:#17232e}
+    #sb-motion-lab .sb-brand{font-size:18px;font-weight:500;letter-spacing:.01em}
+    #sb-motion-lab .sb-kicker{font-size:12px;color:var(--sb-muted)}
+    #sb-motion-lab .sb-scenes{display:flex;gap:6px;flex-wrap:wrap;padding:10px 15px;background:#111b25;border-bottom:1px solid var(--sb-line)}
+    #sb-motion-lab button,#sb-motion-lab select,#sb-motion-lab input{font:inherit}
+    #sb-motion-lab .sb-tab,#sb-motion-lab .sb-choice,#sb-motion-lab .sb-action{min-height:40px;padding:7px 11px;border-radius:7px;border:1px solid #4a5f6e;background:#223342;color:#e0ecf0;font-size:13px;line-height:1.2}
+    #sb-motion-lab .sb-tab[aria-pressed=&quot;true&quot;],#sb-motion-lab .sb-choice[aria-pressed=&quot;true&quot;]{background:#abe6e6;color:#09222a;border-color:#abe6e6;font-weight:500}
+    #sb-motion-lab .sb-action{background:#2a4350;border-color:#6e8992}
+    #sb-motion-lab .sb-layout{display:grid;grid-template-columns:minmax(0,1.34fr) minmax(280px,.82fr)}
+    #sb-motion-lab .sb-visual{min-width:0;border-right:1px solid var(--sb-line)}
+    #sb-motion-lab .sb-stage{position:relative;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;height:365px;background:radial-gradient(circle at 50% 27%,#b7aaa0,#938782 68%,#776d68)}
+    #sb-motion-lab .sb-stage::before{content:&quot;&quot;;position:absolute;top:58%;left:0;right:0;height:7px;background:#805e4d;opacity:.74}
+    #sb-motion-lab .sb-stage::after{content:&quot;&quot;;position:absolute;bottom:0;left:0;right:0;height:82px;background:linear-gradient(175deg,#bb946d,#e1c19a 34%,#b38c62);box-shadow:inset 0 6px 7px #ffe5c488}
+    #sb-motion-lab .sb-stage-head{position:absolute;z-index:5;left:14px;right:14px;top:13px;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:12px}
+    #sb-motion-lab .sb-stage-head span{padding:6px 9px;border-radius:5px;background:#111c24de;box-shadow:0 4px 12px #0003}
+    #sb-motion-lab .sb-machine{position:relative;z-index:3;width:min(74%,330px);margin-bottom:59px;filter:drop-shadow(13px 17px 12px #251f1ab9)}
+    #sb-motion-lab .sb-cube{height:242px;border-radius:3px 4px 0 0;background:linear-gradient(104deg,#2b2e30,#1b1e20 42%,#25292b 80%,#1c1f21);box-shadow:inset 1px 0 1px #b7bdb849,inset -2px 0 3px #07090a,inset 0 1px 1px #aaa9a64f}
+    #sb-motion-lab .sb-seam{position:relative;isolation:isolate;height:12px;margin:0 5px;background:#080c0d}
+    #sb-motion-lab .sb-light,#sb-motion-lab .sb-bloom,#sb-motion-lab .sb-reflection{position:absolute;left:1%;right:1%;pointer-events:none;background:#080c0d}
+    #sb-motion-lab .sb-light{z-index:2;top:2px;height:7px;filter:blur(1.9px)}
+    #sb-motion-lab .sb-bloom{z-index:1;top:-14px;height:39px;filter:blur(13px);opacity:.9}
+    #sb-motion-lab .sb-reflection{z-index:1;top:12px;height:12px;filter:blur(9px);opacity:.34}
+    #sb-motion-lab .sb-fascia{height:54px;padding:0 6%;display:flex;align-items:center;gap:10%;background:linear-gradient(112deg,#24292b,#1a1d20 67%,#292d2e);box-shadow:inset 0 2px 3px #7173703a}
+    #sb-motion-lab .sb-usb{width:15%;height:12px;background:#050708;box-shadow:inset 0 2px 2px #000,0 1px 1px #b9b9b333}
+    #sb-motion-lab .sb-usb::after{content:&quot;&quot;;display:block;width:70%;height:3px;margin:5px auto 0;background:#555b59}
+    #sb-motion-lab .sb-slot{width:11%;height:3px;background:#080a0b}
+    #sb-motion-lab .sb-dot{width:5px;height:5px;margin-left:auto;border-radius:50%;background:#f2f3fb;box-shadow:0 0 6px #dae3ff;flex:none}
+    #sb-motion-lab .sb-power{width:27px;height:27px;border-radius:50%;background:#282c2c;box-shadow:0 0 0 1px #080a0b,inset 1px 1px 2px #a4acaa45;flex:none}
+    #sb-motion-lab .sb-preview{padding:15px 17px 17px;background:#16222c}
+    #sb-motion-lab .sb-readout{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:11px;font-size:14px}
+    #sb-motion-lab .sb-readout strong{font-weight:500}
+    #sb-motion-lab .sb-readout span{color:var(--sb-muted);font-size:12px}
+    #sb-motion-lab .sb-logic{display:grid;grid-template-columns:repeat(17,minmax(0,1fr));gap:3px}
+    #sb-motion-lab .sb-logic i{height:20px;border-radius:2px;background:#303e48}
+    #sb-motion-lab .sb-ruler{display:flex;justify-content:space-between;margin-top:7px;color:var(--sb-muted);font-size:11px}
+    #sb-motion-lab .sb-caption{min-height:31px;margin:10px 0 0;color:var(--sb-muted);font-size:12px;line-height:1.35}
+    #sb-motion-lab .sb-picks{padding:14px 17px 17px;background:#11202b;border-top:1px solid var(--sb-line)}
+    #sb-motion-lab .sb-label{margin-bottom:8px;color:#c2d5dc;font-size:11px;text-transform:uppercase;letter-spacing:.09em}
+    #sb-motion-lab .sb-choices{display:flex;flex-wrap:wrap;gap:6px}
+    #sb-motion-lab .sb-detail{min-height:34px;margin:10px 0 0;color:var(--sb-muted);font-size:12px;line-height:1.4}
+    #sb-motion-lab .sb-aside{padding:16px 18px;background:#1b2a36}
+    #sb-motion-lab .sb-aside-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-bottom:12px;border-bottom:1px solid #405463}
+    #sb-motion-lab .sb-aside-head strong{font-size:16px;font-weight:500}
+    #sb-motion-lab .sb-concept{font-size:11px;color:#b6eada;background:#245246;border-radius:4px;padding:4px 6px}
+    #sb-motion-lab .sb-group{margin:16px 0 8px;color:#c1d5dc;font-size:11px;text-transform:uppercase;letter-spacing:.09em}
+    #sb-motion-lab .sb-setting{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:49px;padding:9px 0;border-top:1px solid #3a4c59;color:#e7eff2;font-size:13px}
+    #sb-motion-lab .sb-setting label{max-width:65%}
+    #sb-motion-lab .sb-setting select{max-width:145px;padding:6px;border:1px solid #526b77;border-radius:5px;background:#2b3e4b;color:#f4f8f9;font-size:12px}
+    #sb-motion-lab .sb-value{font-variant-numeric:tabular-nums;color:#edfaf8}
+    #sb-motion-lab .sb-range{width:100%;accent-color:#8fe8dc;margin:8px 0}
+    #sb-motion-lab .sb-actions{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+    #sb-motion-lab .sb-hint{color:var(--sb-muted);font-size:12px;line-height:1.45;margin:8px 0 0}
+    #sb-motion-lab .sb-micro{margin-top:14px;padding-top:12px;border-top:1px solid #405463;color:#aec2c9;font-size:11px;line-height:1.45}
+    @media(max-width:760px){#sb-motion-lab .sb-layout{grid-template-columns:1fr}#sb-motion-lab .sb-visual{border-right:0;border-bottom:1px solid var(--sb-line)}#sb-motion-lab .sb-stage{height:340px}}
+    @media(max-width:390px){#sb-motion-lab .sb-stage{height:315px}#sb-motion-lab .sb-machine{width:min(78%,280px);margin-bottom:54px}#sb-motion-lab .sb-cube{height:206px}#sb-motion-lab .sb-fascia{height:48px}#sb-motion-lab .sb-logic{gap:2px}#sb-motion-lab .sb-stage-head{left:8px;right:8px;top:8px}}
+    @media(prefers-reduced-motion:reduce){#sb-motion-lab .sb-light,#sb-motion-lab .sb-bloom,#sb-motion-lab .sb-reflection{transition:none}}
   &lt;/style&gt;
-  &lt;section class=&quot;sbcc-shell&quot; aria-label=&quot;SignalBar controller battery concept&quot;&gt;
-    &lt;header class=&quot;sbcc-top&quot;&gt;
-      &lt;div class=&quot;sbcc-brand&quot;&gt;&lt;strong&gt;SignalBar&lt;/strong&gt;&lt;span&gt;Controller signals&lt;/span&gt;&lt;/div&gt;
-      &lt;span class=&quot;sbcc-edition&quot;&gt;Concept · 17 LED&lt;/span&gt;
-    &lt;/header&gt;
-    &lt;div class=&quot;sbcc-scenes&quot; role=&quot;group&quot; aria-label=&quot;Preview controller battery scenarios&quot;&gt;
-      &lt;button class=&quot;sbcc-scene cursor-interaction&quot; type=&quot;button&quot; data-scenario=&quot;connect&quot; aria-pressed=&quot;true&quot;&gt;Connect&lt;/button&gt;
-      &lt;button class=&quot;sbcc-scene cursor-interaction&quot; type=&quot;button&quot; data-scenario=&quot;persistent&quot; aria-pressed=&quot;false&quot;&gt;Always visible&lt;/button&gt;
-      &lt;button class=&quot;sbcc-scene cursor-interaction&quot; type=&quot;button&quot; data-scenario=&quot;low&quot; aria-pressed=&quot;false&quot;&gt;Low battery&lt;/button&gt;
-      &lt;button class=&quot;sbcc-scene cursor-interaction&quot; type=&quot;button&quot; data-scenario=&quot;charging&quot; aria-pressed=&quot;false&quot;&gt;Charging&lt;/button&gt;
-      &lt;button class=&quot;sbcc-scene cursor-interaction&quot; type=&quot;button&quot; data-scenario=&quot;duo&quot; aria-pressed=&quot;false&quot;&gt;Two controllers&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;sbcc-layout&quot;&gt;
-      &lt;div class=&quot;sbcc-visual&quot;&gt;
-        &lt;div class=&quot;sbcc-stage&quot;&gt;
-          &lt;div class=&quot;sbcc-hud&quot; aria-hidden=&quot;true&quot;&gt;
-            &lt;span class=&quot;sbcc-hud-main&quot;&gt;&lt;i data-lucide=&quot;gamepad-2&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;span class=&quot;sbcc-hud-name&quot;&gt;Controller 1&lt;/span&gt;&lt;/span&gt;
-            &lt;span class=&quot;sbcc-hud-value&quot;&gt;74% battery&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;sbcc-machine&quot; aria-hidden=&quot;true&quot;&gt;
-            &lt;div class=&quot;sbcc-upper&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;sbcc-seam&quot;&gt;&lt;div class=&quot;sbcc-bloom&quot;&gt;&lt;/div&gt;&lt;div class=&quot;sbcc-light&quot;&gt;&lt;/div&gt;&lt;/div&gt;
-            &lt;div class=&quot;sbcc-fascia&quot;&gt;&lt;i class=&quot;sbcc-usb&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sbcc-usb&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sbcc-slot&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sbcc-dot&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sbcc-power&quot;&gt;&lt;/i&gt;&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;span class=&quot;sbcc-stage-foot&quot;&gt;Diffused physical light guide&lt;/span&gt;
+  &lt;section class=&quot;sb-shell&quot; aria-label=&quot;SignalBar controller signal concepts&quot;&gt;
+    &lt;header class=&quot;sb-top&quot;&gt;&lt;strong class=&quot;sb-brand&quot;&gt;SignalBar&lt;/strong&gt;&lt;span class=&quot;sb-kicker&quot;&gt;Controller motion lab · 17 LEDs · concept&lt;/span&gt;&lt;/header&gt;
+    &lt;nav class=&quot;sb-scenes&quot; aria-label=&quot;Controller situations&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;sb-tab cursor-interaction&quot; data-scene=&quot;connect&quot; aria-pressed=&quot;false&quot;&gt;Connect&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;sb-tab cursor-interaction&quot; data-scene=&quot;gauge&quot; aria-pressed=&quot;false&quot;&gt;Battery gauge&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;sb-tab cursor-interaction&quot; data-scene=&quot;low&quot; aria-pressed=&quot;false&quot;&gt;Low battery&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;sb-tab cursor-interaction&quot; data-scene=&quot;charging&quot; aria-pressed=&quot;true&quot;&gt;Charging&lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;sb-tab cursor-interaction&quot; data-scene=&quot;duo&quot; aria-pressed=&quot;false&quot;&gt;Two controllers&lt;/button&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;sb-layout&quot;&gt;
+      &lt;div class=&quot;sb-visual&quot;&gt;
+        &lt;div class=&quot;sb-stage&quot;&gt;
+          &lt;div class=&quot;sb-stage-head&quot;&gt;&lt;span class=&quot;sb-hud-left&quot;&gt;Controller 2&lt;/span&gt;&lt;span class=&quot;sb-hud-right&quot;&gt;41% · charging&lt;/span&gt;&lt;/div&gt;
+          &lt;div class=&quot;sb-machine&quot; aria-hidden=&quot;true&quot;&gt;&lt;div class=&quot;sb-cube&quot;&gt;&lt;/div&gt;&lt;div class=&quot;sb-seam&quot;&gt;&lt;div class=&quot;sb-bloom&quot;&gt;&lt;/div&gt;&lt;div class=&quot;sb-reflection&quot;&gt;&lt;/div&gt;&lt;div class=&quot;sb-light&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;sb-fascia&quot;&gt;&lt;i class=&quot;sb-usb&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sb-usb&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sb-slot&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sb-dot&quot;&gt;&lt;/i&gt;&lt;i class=&quot;sb-power&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;sbcc-decky&quot;&gt;
-          &lt;div class=&quot;sbcc-readout&quot;&gt;&lt;strong class=&quot;sbcc-readout-main&quot;&gt;Controller 1 · 74%&lt;/strong&gt;&lt;span class=&quot;sbcc-readout-state&quot;&gt;Connected&lt;/span&gt;&lt;/div&gt;
-          &lt;div class=&quot;sbcc-logic&quot; role=&quot;img&quot; aria-label=&quot;Logical preview of 17 LEDs&quot;&gt;&lt;/div&gt;
-          &lt;p class=&quot;sbcc-description&quot; aria-live=&quot;polite&quot;&gt;A quick welcome, then back to your chosen display.&lt;/p&gt;
-        &lt;/div&gt;
+        &lt;div class=&quot;sb-preview&quot;&gt;&lt;div class=&quot;sb-readout&quot;&gt;&lt;strong class=&quot;sb-main&quot;&gt;Controller 2 · 41%&lt;/strong&gt;&lt;span class=&quot;sb-status&quot;&gt;Charging · continuous&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;sb-logic&quot; role=&quot;img&quot; aria-label=&quot;Logical preview of the 17 LEDs&quot;&gt;&lt;/div&gt;&lt;div class=&quot;sb-ruler&quot;&gt;&lt;span&gt;LEFT&lt;/span&gt;&lt;span&gt;LED 9 · CENTRE&lt;/span&gt;&lt;span&gt;RIGHT&lt;/span&gt;&lt;/div&gt;&lt;p class=&quot;sb-caption&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;sb-picks&quot;&gt;&lt;div class=&quot;sb-label&quot;&gt;Visual direction&lt;/div&gt;&lt;div class=&quot;sb-choices&quot; role=&quot;group&quot; aria-label=&quot;Animation choices&quot;&gt;&lt;/div&gt;&lt;p class=&quot;sb-detail&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;&lt;/div&gt;
       &lt;/div&gt;
-      &lt;aside class=&quot;sbcc-settings&quot; aria-label=&quot;Proposed Decky settings&quot;&gt;
-        &lt;div class=&quot;sbcc-settings-top&quot;&gt;&lt;strong&gt;Controller battery&lt;/strong&gt;&lt;span&gt;ON&lt;/span&gt;&lt;/div&gt;
-        &lt;p class=&quot;sbcc-label&quot;&gt;Selected signal&lt;/p&gt;
-        &lt;h2 class=&quot;sbcc-mode-title&quot;&gt;Welcome glance&lt;/h2&gt;
-        &lt;p class=&quot;sbcc-mode-detail&quot;&gt;A soft two-sided hello, then the exact battery level for three seconds.&lt;/p&gt;
-        &lt;p class=&quot;sbcc-label&quot;&gt;When to show it&lt;/p&gt;
-        &lt;div class=&quot;sbcc-rule&quot;&gt;&lt;span&gt;On connect&lt;/span&gt;&lt;b&gt;3 seconds&lt;/b&gt;&lt;/div&gt;
-        &lt;div class=&quot;sbcc-rule&quot;&gt;&lt;span&gt;Low battery warning&lt;/span&gt;&lt;b class=&quot;sbcc-low-threshold&quot;&gt;Below 20%&lt;/b&gt;&lt;/div&gt;
-        &lt;label class=&quot;sbcc-rule&quot; for=&quot;sbcc-keep&quot;&gt;&lt;span&gt;Keep battery visible&lt;/span&gt;&lt;select class=&quot;sbcc-select cursor-interaction&quot; id=&quot;sbcc-keep&quot;&gt;&lt;option value=&quot;off&quot;&gt;Off&lt;/option&gt;&lt;option value=&quot;home&quot; selected&gt;On Home&lt;/option&gt;&lt;option value=&quot;always&quot;&gt;Always&lt;/option&gt;&lt;/select&gt;&lt;/label&gt;
-        &lt;div class=&quot;sbcc-rule&quot;&gt;&lt;span&gt;Two controllers&lt;/span&gt;&lt;b&gt;8 + centre off + 8&lt;/b&gt;&lt;/div&gt;
-        &lt;p class=&quot;sbcc-note&quot;&gt;A low-battery alert briefly takes priority over Artwork or Performance. Steam Families&#x27; final countdown remains protected.&lt;/p&gt;
+      &lt;aside class=&quot;sb-aside&quot; aria-label=&quot;Proposed Decky settings&quot;&gt;
+        &lt;div class=&quot;sb-aside-head&quot;&gt;&lt;strong&gt;Controller signals&lt;/strong&gt;&lt;span class=&quot;sb-concept&quot;&gt;CONCEPT&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;sb-group&quot;&gt;Live sample&lt;/div&gt;
+        &lt;div class=&quot;sb-setting&quot;&gt;&lt;label for=&quot;sb-motion-battery&quot;&gt;Controller 2 battery&lt;/label&gt;&lt;span class=&quot;sb-value&quot; id=&quot;sb-motion-battery-value&quot;&gt;41%&lt;/span&gt;&lt;/div&gt;
+        &lt;input id=&quot;sb-motion-battery&quot; class=&quot;sb-range cursor-interaction&quot; type=&quot;range&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;41&quot; aria-label=&quot;Controller 2 battery percentage&quot;&gt;
+        &lt;div class=&quot;sb-actions&quot;&gt;&lt;button type=&quot;button&quot; class=&quot;sb-action cursor-interaction&quot; id=&quot;sb-motion-charge&quot;&gt;Simulate charge to 100%&lt;/button&gt;&lt;button type=&quot;button&quot; class=&quot;sb-action cursor-interaction&quot; id=&quot;sb-motion-replay&quot;&gt;Replay event&lt;/button&gt;&lt;/div&gt;
+        &lt;p class=&quot;sb-hint&quot; id=&quot;sb-motion-rule&quot;&gt;The motion runs for as long as charging is reported below 100%. At 100%, one small completion cue, then it stops.&lt;/p&gt;
+        &lt;div class=&quot;sb-group&quot;&gt;Charging visibility&lt;/div&gt;
+        &lt;div class=&quot;sb-setting&quot;&gt;&lt;label for=&quot;sb-motion-where&quot;&gt;While charging&lt;/label&gt;&lt;select id=&quot;sb-motion-where&quot; class=&quot;cursor-interaction&quot;&gt;&lt;option value=&quot;home&quot;&gt;On Home&lt;/option&gt;&lt;option value=&quot;everywhere&quot; selected&gt;Home + in game&lt;/option&gt;&lt;option value=&quot;off&quot;&gt;Off&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;
+        &lt;p class=&quot;sb-hint&quot;&gt;Optional long-running signal. It gives way to urgent events and the final Steam Families countdown.&lt;/p&gt;
+        &lt;p class=&quot;sb-micro&quot;&gt;Preview sequences repeat here for comparison. Connect and low-battery alerts would play once per event; only charging stays in motion.&lt;/p&gt;
       &lt;/aside&gt;
     &lt;/div&gt;
   &lt;/section&gt;
   &lt;script&gt;
-    (() =&gt; {
-      const root = document.getElementById(&quot;sb-controller-concept&quot;);
-      const logic = root.querySelector(&quot;.sbcc-logic&quot;);
-      const light = root.querySelector(&quot;.sbcc-light&quot;);
-      const bloom = root.querySelector(&quot;.sbcc-bloom&quot;);
-      const hudName = root.querySelector(&quot;.sbcc-hud-name&quot;);
-      const hudValue = root.querySelector(&quot;.sbcc-hud-value&quot;);
-      const readout = root.querySelector(&quot;.sbcc-readout-main&quot;);
-      const readoutState = root.querySelector(&quot;.sbcc-readout-state&quot;);
-      const description = root.querySelector(&quot;.sbcc-description&quot;);
-      const modeTitle = root.querySelector(&quot;.sbcc-mode-title&quot;);
-      const modeDetail = root.querySelector(&quot;.sbcc-mode-detail&quot;);
-      const keep = root.querySelector(&quot;.sbcc-select&quot;);
-      const OFF = &quot;#0a1013&quot;;
-      const CYAN = &quot;#43d7e5&quot;;
-      const GREEN = &quot;#7ce0ae&quot;;
-      const AMBER = &quot;#ffc66e&quot;;
-      const RED = &quot;#ff6571&quot;;
-      const WHITE = &quot;#f7f6ed&quot;;
-      const state = { scenario: &quot;connect&quot;, keep: &quot;home&quot;, lowThreshold: 20, warningStyle: &quot;Beacon&quot; };
-      const cells = Array.from({ length: 17 }, () =&gt; {
-        const element = document.createElement(&quot;i&quot;);
-        logic.appendChild(element);
-        return element;
-      });
-      const sceneContent = {
-        connect: [&quot;Welcome glance&quot;, &quot;Two gentle waves meet at the centre, then reveal the battery level before giving the bar back.&quot;, &quot;Controller 1 · 74%&quot;, &quot;Connected&quot;, &quot;A quick welcome, then back to your chosen display.&quot;],
-        persistent: [&quot;The quiet gauge&quot;, &quot;An optional base display for people who want battery level in view all the time.&quot;, &quot;Controller 1 · 74%&quot;, &quot;Persistent&quot;, &quot;13 of 17 LEDs lit. Use it on Home only, or everywhere.&quot;],
-        low: [&quot;Low-battery beacon&quot;, &quot;A brief red call that settles on the real remaining charge. Noticeable, not a strobe.&quot;, &quot;Controller 1 · 14%&quot;, &quot;Low battery&quot;, &quot;Two red LEDs stay visible long enough to read the warning.&quot;],
-        charging: [&quot;Charging current&quot;, &quot;A quiet white current moves through the filled portion, then reveals the new charge.&quot;, &quot;Controller 1 · 38%&quot;, &quot;Charging&quot;, &quot;The white tip indicates charging without hiding the battery level.&quot;],
-        duo: [&quot;The duet&quot;, &quot;Two controllers share the strip: eight LEDs each, centre LED off.&quot;, &quot;P1 74% · P2 25%&quot;, &quot;Two connected&quot;, &quot;Left is Player 1. Right is Player 2. The centre separates them.&quot;],
+    (()=&gt;{
+      const root=document.getElementById(&#x27;sb-motion-lab&#x27;);
+      const q=s=&gt;root.querySelector(s);
+      const OFF=&#x27;#080c10&#x27;, CYAN=&#x27;#57d9e9&#x27;, MINT=&#x27;#78dabb&#x27;, AMBER=&#x27;#ffd17b&#x27;, RED=&#x27;#fb6971&#x27;, WHITE=&#x27;#f6f5ef&#x27;, SOFT=&#x27;#3e8d92&#x27;;
+      const state={scene:&#x27;charging&#x27;,variant:0,battery:41,where:&#x27;everywhere&#x27;,glow:0.9,speed:1};
+      const content={
+        connect:{title:&#x27;Controller 2&#x27;,status:&#x27;Connected&#x27;,variants:[[&#x27;Magnetic welcome&#x27;,&#x27;Two soft currents meet, create a quick white glint, then reveal the actual battery.&#x27;],[&#x27;Arc return&#x27;,&#x27;A fine point traverses the bar, returns with a fading echo, then the charge settles.&#x27;],[&#x27;Twin bloom&#x27;,&#x27;Two points emerge at the centre, open outward, and leave a calm battery gauge.&#x27;]]},
+        gauge:{title:&#x27;Controller 2&#x27;,status:&#x27;Battery gauge&#x27;,variants:[[&#x27;Quiet fill&#x27;,&#x27;A still gauge. Motion is reserved for a meaningful change.&#x27;],[&#x27;Bright tip&#x27;,&#x27;A white tip marks the exact end of the battery fill.&#x27;],[&#x27;Soft horizon&#x27;,&#x27;A broad lower-intensity glow, with a precise end marker.&#x27;]]},
+        low:{title:&#x27;Controller 2&#x27;,status:&#x27;Low battery&#x27;,variants:[[&#x27;Last ember&#x27;,&#x27;The bar collapses to the remaining charge, then two warm warning beats.&#x27;],[&#x27;Signal flare&#x27;,&#x27;A red warning ripples from the remaining charge to the far edge and back.&#x27;],[&#x27;Afterglow&#x27;,&#x27;A vivid double pulse resolves into a dim, steady red remainder.&#x27;]]},
+        charging:{title:&#x27;Controller 2&#x27;,status:&#x27;Charging · continuous&#x27;,variants:[[&#x27;Photon current&#x27;,&#x27;A white particle crosses only the charged area and gently melts into its bright tip.&#x27;],[&#x27;Tidal fill&#x27;,&#x27;A broad wave of light rolls through the filled area, rests, then begins again.&#x27;],[&#x27;Spark lattice&#x27;,&#x27;Small highlights follow each other through the charge and gather at the tip.&#x27;]]},
+        duo:{title:&#x27;P1 96% · P2&#x27;,status:&#x27;Two controllers&#x27;,variants:[[&#x27;Twin reveal&#x27;,&#x27;Both coloured gauges grow from the outer edges. The centre LED is always dark.&#x27;],[&#x27;Two signatures&#x27;,&#x27;A highlight travels from each outer edge towards its own gauge tip: left, then right.&#x27;],[&#x27;Mirror greeting&#x27;,&#x27;Two matching streams approach the centre, pause, then return to the outer edges.&#x27;]]}
       };
-      let started = performance.now();
-
-      function blank() { return Array(17).fill(OFF); }
-      function setRange(colors, from, to, color) { for (let i = from; i &lt;= to; i++) colors[i] = color; }
-      function sceneFrame(scenario, seconds) {
-        const colors = blank();
-        const cycle = seconds % 5.2;
-        if (scenario === &quot;connect&quot;) {
-          if (cycle &lt; 1.6) {
-            const step = Math.min(3, Math.floor(cycle / .4));
-            setRange(colors, step * 2, step * 2 + 1, CYAN);
-            setRange(colors, 15 - step * 2, 16 - step * 2, CYAN);
-          } else if (cycle &lt; 2.05) {
-            setRange(colors, 5, 11, GREEN);
-            setRange(colors, 7, 9, WHITE);
-          } else if (cycle &lt; 4.5) {
-            setRange(colors, 0, 12, GREEN);
-          } else {
-            const artwork = [&quot;#8bdcc5&quot;, &quot;#ffe39b&quot;, &quot;#f9b77e&quot;, &quot;#6cbfbc&quot;, &quot;#ffca68&quot;, &quot;#f0a461&quot;, &quot;#3fc4c3&quot;, &quot;#f5d46c&quot;, &quot;#f7ad68&quot;, &quot;#79cca8&quot;, &quot;#f6c763&quot;, &quot;#f4b263&quot;, &quot;#71bbaa&quot;, &quot;#c9a0df&quot;, &quot;#86d8c2&quot;, &quot;#f1b772&quot;, &quot;#aacfe0&quot;];
-            artwork.forEach((color, index) =&gt; { colors[index] = color; });
-          }
-        } else if (scenario === &quot;persistent&quot;) {
-          const count = Math.min(13, Math.floor(seconds * 12) + 1);
-          setRange(colors, 0, count - 1, GREEN);
-        } else if (scenario === &quot;low&quot;) {
-          const beat = Math.floor(cycle / (state.warningStyle === &quot;Beacon&quot; ? .55 : .9));
-          const lowLevel = Math.min(14, state.lowThreshold - 1);
-          const lowCells = Math.max(1, Math.round(lowLevel / 100 * 17));
-          if (state.warningStyle === &quot;Beacon&quot; &amp;&amp; cycle &lt; 2.2 &amp;&amp; beat % 2 === 0) {
-            setRange(colors, 0, 3, RED);
-            setRange(colors, 13, 16, RED);
-          } else {
-            setRange(colors, 0, lowCells - 1, state.warningStyle === &quot;Quiet pulse&quot; &amp;&amp; beat % 2 ? &quot;#a33f4a&quot; : RED);
-          }
-        } else if (scenario === &quot;charging&quot;) {
-          setRange(colors, 0, 5, CYAN);
-          const position = Math.floor(cycle / .55) % 7;
-          if (position &lt; 6) colors[position] = WHITE;
-          if (cycle &gt; 3.6) colors[6] = GREEN;
-        } else if (scenario === &quot;duo&quot;) {
-          const count = Math.min(6, Math.floor(seconds * 8) + 1);
-          setRange(colors, 0, count - 1, GREEN);
-          setRange(colors, 17 - Math.min(2, Math.floor(seconds * 5) + 1), 16, AMBER);
+      const leds=Array.from({length:17},()=&gt;{const e=document.createElement(&#x27;i&#x27;);q(&#x27;.sb-logic&#x27;).appendChild(e);return e});
+      let epoch=performance.now(),chargeStart=0,chargeFrom=41,finishAt=-999;
+      const clamp=(v,a,b)=&gt;Math.min(b,Math.max(a,v));
+      const ease=x=&gt;{const y=clamp(x,0,1);return y*y*(3-2*y)};
+      function blank(){return Array(17).fill(OFF)}
+      function put(a,i,c){if(i&gt;=0&amp;&amp;i&lt;17)a[i]=c}
+      function fill(a,x,y,c){for(let i=Math.max(0,x);i&lt;=Math.min(16,y);i++)put(a,i,c)}
+      function restoredFrame(){const a=blank();fill(a,0,4,&#x27;#5a8fa2&#x27;);fill(a,5,8,&#x27;#6c8da9&#x27;);fill(a,9,11,&#x27;#8e8fb2&#x27;);return a}
+      function gauge(a,percent,color=MINT,tip=false){const n=Math.max(percent&gt;0?1:0,Math.round(percent/100*17));fill(a,0,n-1,color);if(tip&amp;&amp;n)put(a,n-1,WHITE)}
+      function duoBase(t,animated){
+        const a=blank(),left=Math.round(.96*8),right=Math.max(state.battery&gt;0?1:0,Math.round(state.battery/100*8));
+        const progress=animated?ease(t/1.45):1;
+        const nl=Math.round(left*progress),nr=Math.round(right*progress);
+        fill(a,0,nl-1,MINT);fill(a,17-nr,16,AMBER);
+        put(a,8,OFF);
+        return a;
+      }
+      function frame(t){
+        const a=blank(),v=state.variant,s=state.scene,b=state.battery,n=Math.max(b&gt;0?1:0,Math.round(b/100*17));
+        if(s===&#x27;gauge&#x27;){gauge(a,b,v===2?SOFT:MINT,v!==0);return a}
+        if(s===&#x27;charging&#x27;){
+          if(b&gt;=100){const f=(performance.now()-finishAt)/1000;if(f&gt;=0&amp;&amp;f&lt;.9){gauge(a,100,MINT,false);let spread=Math.floor(ease(f/.9)*9);fill(a,8-spread,8+spread,f&lt;.42?WHITE:MINT);return a}return restoredFrame()}
+          gauge(a,b,CYAN,false);
+          if(!n||state.where===&#x27;off&#x27;)return a;
+          const phase=t%(v===1?3.2:2.55);
+          if(v===0){const pos=Math.floor(ease(phase/1.95)*n);if(phase&lt;1.95){put(a,Math.min(n-1,pos),WHITE);put(a,pos-1,&#x27;#baf5f0&#x27;)}else put(a,n-1,WHITE)}
+          if(v===1){const center=ease(phase/2.75)*(n+3)-2;for(let i=0;i&lt;n;i++){const d=Math.abs(i-center);if(d&lt;2.8)put(a,i,d&lt;1?WHITE:&#x27;#9de8ea&#x27;)}put(a,n-1,WHITE)}
+          if(v===2){const p=phase/2.15;for(let k=0;k&lt;3;k++){const x=Math.floor(((p+k/3)%1)*n);if(phase&lt;2.15)put(a,x,k===0?WHITE:&#x27;#a4f1ef&#x27;)}put(a,n-1,WHITE)}
+          return a;
         }
-        return colors;
+        if(s===&#x27;duo&#x27;){
+          const phase=t%5.6;
+          if(v===0)return duoBase(phase,true);
+          if(v===1){const out=duoBase(0,false),leftMax=7,rightCount=Math.max(state.battery&gt;0?1:0,Math.round(state.battery/100*8));
+            if(phase&lt;1.7){put(out,Math.min(leftMax,Math.floor(ease(phase/1.7)*(leftMax+1))),WHITE)}
+            else if(phase&lt;3.3&amp;&amp;rightCount){put(out,16-Math.min(rightCount-1,Math.floor(ease((phase-1.7)/1.6)*rightCount)),WHITE)}return out}
+          const out=duoBase(0,false),inner=7;
+          if(phase&lt;3.4){const step=phase&lt;1.45?Math.round(ease(phase/1.45)*inner):phase&lt;1.9?inner:Math.round((1-ease((phase-1.9)/1.45))*inner);put(out,step,WHITE);put(out,16-step,WHITE)}return out;
+        }
+        if(s===&#x27;connect&#x27;){
+          const phase=t%6.0;
+          if(v===0){if(phase&lt;1.3){const k=Math.floor(ease(phase/1.3)*8);put(a,k,CYAN);put(a,16-k,CYAN);put(a,k-1,&#x27;#8eeaee&#x27;);put(a,17-k,&#x27;#8eeaee&#x27;)}else if(phase&lt;1.75){fill(a,6,10,WHITE)}else gauge(a,b,MINT,true)}
+          if(v===1){if(phase&lt;2.3){let x=Math.floor(ease(phase&lt;1.15?phase/1.15:2-phase/1.15)*16);put(a,x,WHITE);put(a,x-1,CYAN);put(a,x+1,CYAN)}else gauge(a,b,MINT,true)}
+          if(v===2){if(phase&lt;1.65){let k=Math.floor(ease(phase/1.65)*8);put(a,8-k,WHITE);put(a,8+k,WHITE);put(a,7-k,CYAN);put(a,9+k,CYAN)}else gauge(a,b,MINT,true)}
+          return a;
+        }
+        if(s===&#x27;low&#x27;){
+          const phase=t%6.2,low=Math.min(17,Math.max(1,Math.round(b/100*17)));
+          if(v===0){if(phase&lt;1.25){fill(a,0,Math.max(low-1,Math.round((1-ease(phase/1.25))*16)),AMBER)}else{fill(a,0,low-1,RED);if((phase&gt;1.5&amp;&amp;phase&lt;1.73)||(phase&gt;1.91&amp;&amp;phase&lt;2.15))put(a,low-1,WHITE)}}
+          if(v===1){fill(a,0,low-1,RED);if(phase&lt;2.4){let k=Math.floor((phase&lt;1.2?phase/1.2:2-phase/1.2)*16);put(a,k,WHITE);put(a,k-1,RED);put(a,k+1,RED)}}
+          if(v===2){fill(a,0,low-1,phase&lt;2.2&amp;&amp;((phase%.92)&lt;.24||(phase%.92)&gt;.38&amp;&amp;(phase%.92)&lt;.58)?WHITE:RED);if(phase&lt;2.2&amp;&amp;phase%.92&lt;.24){put(a,8,RED);put(a,7,AMBER);put(a,9,AMBER)}}
+          return a;
+        }
+        return a;
       }
-
-      function renderSceneInfo() {
-        const [title, detail, value, status, caption] = sceneContent[state.scenario];
-        modeTitle.textContent = state.scenario === &quot;low&quot; &amp;&amp; state.warningStyle === &quot;Quiet pulse&quot; ? &quot;Quiet low-battery pulse&quot; : title;
-        modeDetail.textContent = state.scenario === &quot;low&quot; &amp;&amp; state.warningStyle === &quot;Quiet pulse&quot; ? &quot;A soft red heartbeat stays on the true remaining charge, without edge flashes.&quot; : detail;
-        const lowLevel = Math.min(14, state.lowThreshold - 1);
-        readout.textContent = state.scenario === &quot;low&quot; ? `Controller 1 · ${lowLevel}%` : value;
-        readoutState.textContent = status;
-        description.textContent = state.scenario === &quot;low&quot; &amp;&amp; lowLevel &lt; 9 ? &quot;One red LED marks the remaining charge without hiding the warning.&quot; : caption;
-        hudName.textContent = state.scenario === &quot;duo&quot; ? &quot;Two controllers&quot; : &quot;Controller 1&quot;;
-        hudValue.textContent = state.scenario === &quot;duo&quot; ? &quot;74%  ·  25%&quot; : state.scenario === &quot;low&quot; ? `${lowLevel}% battery` : state.scenario === &quot;charging&quot; ? &quot;38% · charging&quot; : &quot;74% battery&quot;;
-        hudValue.style.color = state.scenario === &quot;low&quot; ? RED : state.scenario === &quot;duo&quot; ? AMBER : state.scenario === &quot;charging&quot; ? CYAN : GREEN;
-        keep.value = state.keep;
-        root.querySelector(&quot;.sbcc-low-threshold&quot;).textContent = `Below ${state.lowThreshold}%`;
-        logic.setAttribute(&quot;aria-label&quot;, `${readout.textContent}. ${caption}`);
-        root.querySelectorAll(&quot;.sbcc-scene&quot;).forEach((button) =&gt; button.setAttribute(&quot;aria-pressed&quot;, String(button.dataset.scenario === state.scenario)));
+      function updateInfo(){
+        const s=state.scene,desc=content[s],variation=desc.variants[state.variant];
+        q(&#x27;.sb-main&#x27;).textContent=s===&#x27;duo&#x27;?`P1 96% · P2 ${state.battery}%`:`Controller 2 · ${state.battery}%`;
+        q(&#x27;.sb-status&#x27;).textContent=s===&#x27;charging&#x27;?(state.battery&gt;=100?&#x27;Fully charged · previous signal restored&#x27;:state.where===&#x27;off&#x27;?&#x27;Charging animation off&#x27;:&#x27;Charging · continuous&#x27;):desc.status;
+        q(&#x27;.sb-hud-left&#x27;).textContent=s===&#x27;duo&#x27;?&#x27;Two controllers&#x27;:&#x27;Controller 2&#x27;;
+        q(&#x27;.sb-hud-right&#x27;).textContent=s===&#x27;duo&#x27;?`96% · ${state.battery}%`:`${state.battery}%${s===&#x27;charging&#x27;&amp;&amp;state.battery&lt;100?&#x27; · charging&#x27;:&#x27;&#x27;}`;
+        q(&#x27;.sb-hud-right&#x27;).style.color=s===&#x27;low&#x27;?RED:s===&#x27;charging&#x27;?CYAN:s===&#x27;duo&#x27;?AMBER:MINT;
+        q(&#x27;.sb-caption&#x27;).textContent=s===&#x27;charging&#x27;?(state.battery&gt;=100?&#x27;At 100%, the moving highlight ends and the previous signal returns.&#x27;:&#x27;The fill means battery level. The moving light means charging is in progress.&#x27;):s===&#x27;duo&#x27;?&#x27;8 LEDs per controller. Both gauges grow from the outer edges; the centre LED stays off.&#x27;:s===&#x27;gauge&#x27;?&#x27;A stable level; no perpetual flourish when nothing changes.&#x27;:&#x27;Demo repeats here. The actual alert would play once, then restore the prior signal.&#x27;;
+        const ruler=q(&#x27;.sb-ruler&#x27;).children;
+        ruler[0].textContent=s===&#x27;duo&#x27;?&#x27;P1 · EDGE →&#x27;:&#x27;LEFT&#x27;;
+        ruler[1].textContent=s===&#x27;duo&#x27;?&#x27;CENTRE OFF&#x27;:&#x27;LED 9 · CENTRE&#x27;;
+        ruler[2].textContent=s===&#x27;duo&#x27;?&#x27;← EDGE · P2&#x27;:&#x27;RIGHT&#x27;;
+        q(&#x27;.sb-detail&#x27;).textContent=variation[1];
+        q(&#x27;.sb-logic&#x27;).setAttribute(&#x27;aria-label&#x27;,`${desc.title} ${state.battery} percent. ${variation[0]}. ${s===&#x27;charging&#x27;&amp;&amp;state.battery&gt;=100?&#x27;Charging animation stopped.&#x27;:&#x27;&#x27;}`);
+        q(&#x27;#sb-motion-battery-value&#x27;).textContent=`${state.battery}%`;
+        q(&#x27;#sb-motion-battery&#x27;).value=state.battery;
+        q(&#x27;#sb-motion-charge&#x27;).disabled=state.battery&gt;=100;
+        root.querySelectorAll(&#x27;.sb-tab&#x27;).forEach(x=&gt;x.setAttribute(&#x27;aria-pressed&#x27;,String(x.dataset.scene===s)));
+        q(&#x27;.sb-choices&#x27;).replaceChildren(...desc.variants.map(([name],index)=&gt;{const button=document.createElement(&#x27;button&#x27;);button.type=&#x27;button&#x27;;button.className=&#x27;sb-choice cursor-interaction&#x27;;button.textContent=`${String.fromCharCode(65+index)} · ${name}`;button.setAttribute(&#x27;aria-pressed&#x27;,String(index===state.variant));button.addEventListener(&#x27;click&#x27;,()=&gt;{state.variant=index;epoch=performance.now();updateInfo();draw();save()});return button}));
       }
-
-      function renderFrame() {
-        const colors = sceneFrame(state.scenario, (performance.now() - started) / 1000);
-        const gradient = `linear-gradient(90deg, ${colors.map((color, i) =&gt; `${color} ${(i / 17 * 100).toFixed(2)}%, ${color} ${((i + 1) / 17 * 100).toFixed(2)}%`).join(&quot;, &quot;)})`;
-        light.style.background = gradient;
-        bloom.style.background = gradient;
-        cells.forEach((cell, index) =&gt; { cell.style.background = colors[index] === OFF ? &quot;#303943&quot; : colors[index]; });
+      function draw(){
+        const now=performance.now();
+        if(chargeStart){const elapsed=(now-chargeStart)/1000;const next=Math.min(100,Math.round(chargeFrom+(100-chargeFrom)*elapsed/10));if(next!==state.battery){state.battery=next;updateInfo()}if(next&gt;=100){chargeStart=0;finishAt=now;updateInfo();save()}}
+        const frameColors=frame((now-epoch)/1000*state.speed);
+        const stops=frameColors.map((c,i)=&gt;`${c} ${((i+.5)/17*100).toFixed(2)}%`).join(&#x27;,&#x27;);
+        const gradient=`linear-gradient(90deg,${stops})`;
+        for(const selector of [&#x27;.sb-light&#x27;,&#x27;.sb-bloom&#x27;,&#x27;.sb-reflection&#x27;])q(selector).style.background=gradient;
+        q(&#x27;.sb-bloom&#x27;).style.opacity=String(state.glow);
+        leds.forEach((element,i)=&gt;{element.style.background=frameColors[i]===OFF?&#x27;#303e48&#x27;:frameColors[i]});
       }
-
-      function saveSelection() {
-        if (globalThis.openai?.setWidgetState) globalThis.openai.setWidgetState({ modelContent: { scenario: state.scenario, keep: state.keep, lowThreshold: state.lowThreshold, warningStyle: state.warningStyle } }).catch(() =&gt; {});
+      function save(){if(globalThis.openai?.setWidgetState)globalThis.openai.setWidgetState({modelContent:{scene:state.scene,variant:state.variant,battery:state.battery,where:state.where}}).catch(()=&gt;{})}
+      const saved=globalThis.openai?.widgetState?.modelContent;
+      if(saved&amp;&amp;typeof saved===&#x27;object&#x27;){
+        if(content[saved.scene])state.scene=saved.scene;
+        if(Number.isInteger(saved.variant)&amp;&amp;saved.variant&gt;=0&amp;&amp;saved.variant&lt;=2)state.variant=saved.variant;
+        if(Number.isInteger(saved.battery))state.battery=clamp(saved.battery,0,100);
+        if([&#x27;off&#x27;,&#x27;home&#x27;,&#x27;everywhere&#x27;].includes(saved.where))state.where=saved.where;
       }
-
-      function choose(scenario) {
-        state.scenario = scenario;
-        if (scenario === &quot;persistent&quot;) state.keep = &quot;always&quot;;
-        started = performance.now();
-        renderSceneInfo();
-        renderFrame();
-        saveSelection();
-      }
-
-      root.querySelectorAll(&quot;.sbcc-scene&quot;).forEach((button) =&gt; button.addEventListener(&quot;click&quot;, () =&gt; choose(button.dataset.scenario)));
-      keep.addEventListener(&quot;change&quot;, () =&gt; { state.keep = keep.value; renderSceneInfo(); saveSelection(); });
-
-      const saved = globalThis.openai?.widgetState?.modelContent;
-      if (saved &amp;&amp; sceneContent[saved.scenario]) state.scenario = saved.scenario;
-      if (saved &amp;&amp; [&quot;off&quot;, &quot;home&quot;, &quot;always&quot;].includes(saved.keep)) state.keep = saved.keep;
-      renderSceneInfo();
-      renderFrame();
-      setInterval(renderFrame, 120);
-
-      if (globalThis.Tweak) {
-        const tweak = new Tweak({ container: root.querySelector(&quot;.sbcc-settings&quot;), onChange: () =&gt; { renderSceneInfo(); renderFrame(); saveSelection(); } });
-        tweak.addSelect(state, &quot;keep&quot;, { label: &quot;Persistent battery display&quot;, options: [{ label: &quot;Off&quot;, value: &quot;off&quot; }, { label: &quot;On Home&quot;, value: &quot;home&quot; }, { label: &quot;Always&quot;, value: &quot;always&quot; }] });
-        tweak.addSlider(state, &quot;lowThreshold&quot;, { label: &quot;Low-battery threshold&quot;, min: 5, max: 30, step: 5, unit: &quot;%&quot; });
-        tweak.addSelect(state, &quot;warningStyle&quot;, { label: &quot;Low-battery animation&quot;, options: [&quot;Beacon&quot;, &quot;Quiet pulse&quot;] });
-      }
+      q(&#x27;#sb-motion-where&#x27;).value=state.where;
+      root.querySelectorAll(&#x27;.sb-tab&#x27;).forEach(button=&gt;button.addEventListener(&#x27;click&#x27;,()=&gt;{state.scene=button.dataset.scene;state.variant=0;epoch=performance.now();updateInfo();draw();save()}));
+      q(&#x27;#sb-motion-battery&#x27;).addEventListener(&#x27;input&#x27;,e=&gt;{state.battery=Number(e.target.value);chargeStart=0;if(state.battery===100)finishAt=-999;epoch=performance.now();updateInfo();draw();save()});
+      q(&#x27;#sb-motion-charge&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{if(state.battery&gt;=100)return;chargeFrom=state.battery;chargeStart=performance.now();state.scene=&#x27;charging&#x27;;state.variant=state.variant%3;epoch=performance.now();updateInfo();draw();save()});
+      q(&#x27;#sb-motion-replay&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{epoch=performance.now();draw()});
+      q(&#x27;#sb-motion-where&#x27;).addEventListener(&#x27;change&#x27;,e=&gt;{state.where=e.target.value;updateInfo();draw();save()});
+      updateInfo();draw();const timer=setInterval(draw,65);
+      if(globalThis.Tweak){const tweak=new Tweak({container:q(&#x27;.sb-stage&#x27;),onChange:()=&gt;{draw()}});tweak.addSlider(state,&#x27;glow&#x27;,{label:&#x27;Hardware halo&#x27;,min:0.3,max:1,step:0.05});tweak.addSlider(state,&#x27;speed&#x27;,{label:&#x27;Animation pace&#x27;,min:0.6,max:1.5,step:0.1})}
     })();
   &lt;/script&gt;
 &lt;/div&gt;
